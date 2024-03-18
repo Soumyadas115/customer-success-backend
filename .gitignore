@@ -11,8 +11,8 @@
 /.env*
 !/.env*.erb
 
-# Change in future
-set_env.sh
+# Changed in future
+# set_env.sh
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

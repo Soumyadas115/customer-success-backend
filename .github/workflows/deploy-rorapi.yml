@@ -23,6 +23,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
+          chmod +x set_env.sh
+          ./set_env.sh
           docker build -t ror-api .
           docker tag ror-api ${{ secrets.DOCKER_USERNAME }}/ror-api:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USERNAME }}/ror-api:${{ github.sha }}
