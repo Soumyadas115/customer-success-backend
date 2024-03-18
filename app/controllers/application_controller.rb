@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
 
     private
 
-    def getUserById(user_id)
-        User.find_by(id: user_id)
+    def getUserById(userId)
+        User.find_by(id: userId)
     end
 
-    def getUserByEmail(user_email)
-        User.find_by(email: user_email)
+    def getUserByEmail(userEmail)
+        User.find_by(email: userEmail)
     end
     
     helper_method :getUserById, :getUserByEmail

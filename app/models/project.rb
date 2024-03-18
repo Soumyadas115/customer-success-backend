@@ -4,8 +4,16 @@ class Project < ApplicationRecord
     self.table_name = 'Project'
     self.inheritance_column = nil
 
-    belongs_to :user, optional: true
-    
+    has_many :projects, foreign_key: 'userId'
+    belongs_to :project_manager, class_name: 'User', optional: true
+    belongs_to :auditor, class_name: 'User', optional: true
+    belongs_to :client, class_name: 'User', optional: true
+
+    has_many :members, foreign_key: 'projectId'
+    has_many :audits, foreign_key: 'projectId'
+    has_many :milestones, foreign_key: 'projectId'
+    has_many :risks, foreign_key: 'projectId'
+
     def generate_uuid_for_id
         self.id ||= SecureRandom.uuid
     end
