@@ -28,7 +28,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/ror-api:${{ github.sha }}
 
       - name: ssh to server
-        uses: appleboy/ssh-action@v0
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
