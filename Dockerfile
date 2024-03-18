@@ -5,7 +5,7 @@ WORKDIR /myapp
 COPY . .
 RUN gem install bundler
 RUN bundle install
-COPY .env ./.env
+# COPY .env ./.env
 # Expose environment variables from .env file
 # ENV $(cat .env | grep -v ^# | xargs)
 EXPOSE 4000
