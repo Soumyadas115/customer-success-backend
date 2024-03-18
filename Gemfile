@@ -11,7 +11,7 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
-gem 'dotenv-rails'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -71,7 +71,7 @@ group :test do
 end
 
 
-group :development, :test do
+group :development, :test, :production do
   gem 'faker'
   gem 'populator'
 end

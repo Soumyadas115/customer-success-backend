@@ -1,4 +1,4 @@
-module Populator
+module PopulatorFix
     class Factory
       def rows_sql_arr
         @records.map do |record|
