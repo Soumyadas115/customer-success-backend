@@ -15,7 +15,13 @@ Rails.application.routes.draw do
   resources :audits, only: [:index, :create, :update, :destroy], defaults: { format: :json }
   resources :milestones, only: [:index, :create, :update, :destroy], defaults: { format: :json }
   resources :risks, only: [:index, :create, :update, :destroy], defaults: { format: :json }
-
+  resources :stakeholders, only: [:index, :create, :update, :destroy], defaults: { format: :json }
+  resources :moms, only: [:index, :create, :update, :destroy], defaults: { format: :json }
+  resources :sprints, only: [:index, :create, :update, :destroy], defaults: { format: :json }
+  resources :versions, only: [:index, :create, :update, :destroy], defaults: { format: :json }
+  resources :updates, only: [:index, :create, :update, :destroy], defaults: { format: :json }
+  resources :feedbacks, only: [:index, :create, :update, :destroy], defaults: { format: :json }
+  resources :resources, only: [:index, :create, :update, :destroy], defaults: { format: :json }
   # Defines the root path route ("/")
   # root "posts#index"
 end

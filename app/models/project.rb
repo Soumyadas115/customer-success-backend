@@ -16,6 +16,10 @@ class Project < ApplicationRecord
     has_many :stakeholders, foreign_key: 'projectId'
     has_many :moms, foreign_key: 'projectId'
     has_many :sprints, foreign_key: 'projectId'
+    has_many :versions, foreign_key: 'projectId'
+    has_many :updates, foreign_key: 'projectId'
+    has_many :resources, foreign_key: 'projectId'
+
 
     def generate_uuid_for_id
         self.id ||= SecureRandom.uuid

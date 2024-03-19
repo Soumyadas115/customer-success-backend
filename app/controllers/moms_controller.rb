@@ -29,7 +29,7 @@ class MomsController < ApplicationController
         projectId: body['projectId']
       )
 
-      render json: stakeholder, status: :created
+      render json: mom, status: :created
     rescue => error
       render json: { error: error.message }, status: :internal_server_error
     end

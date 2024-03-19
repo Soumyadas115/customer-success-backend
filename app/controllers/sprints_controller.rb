@@ -22,14 +22,14 @@ class SprintsController < ApplicationController
   
         sprint = Sprint.new(
             status: body['status'],
-            start_date: body['startDate'],
-            end_date: body['endDate'],
+            startDate: body['startDate'],
+            endDate: body['endDate'],
             comments: body['comments'],
             projectId: body['projectId']
         )
         sprint.save!
   
-        render json: risk, status: :created
+        render json: sprint, status: :created
       rescue => error
         render json: { error: error.message }, status: :internal_server_error
       end
@@ -39,7 +39,7 @@ class SprintsController < ApplicationController
       begin
         body = JSON.parse(request.body.read)
         sprint = Sprint.find_by(id: params[:id])
-        return render json: { error: "Sprint details not found" }, status: :not_found unless risk
+        return render json: { error: "Sprint details not found" }, status: :not_found unless sprint
   
         user = User.find_by(id: body['userId'])
         return render json: { error: "User not found" }, status: :not_found unless user
@@ -50,8 +50,8 @@ class SprintsController < ApplicationController
   
         sprint.update!(
             status: body['status'],
-            start_date: body['startDate'],
-            end_date: body['endDate'],
+            startDate: body['startDate'],
+            endDate: body['endDate'],
             comments: body['comments'],
         )
   
