@@ -39,4 +39,4 @@ jobs:
             sudo docker stop ror-api
             sudo docker rm ror-api
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/ror-api:${{ github.sha }}
-            sudo docker run -d -p 4000:4000 --name ror-api ${{ secrets.DOCKER_USERNAME }}/ror-api:${{ github.sha }}
+            sudo docker run -d -p 4000:4000 --name ror-api --restart unless-stopped ${{ secrets.DOCKER_USERNAME }}/ror-api:${{ github.sha }}
